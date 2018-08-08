@@ -17,6 +17,7 @@ Create and documentate an opinionated [ReactJS](https://reactjs.org/) style guid
     2. [Modules](#modules)
     3. [Features](#features)
     4. [Subcomponents](#subcomponents)
+    4. [Reusing component logics](#reusing-component-logics)
 3. [Commits](#commits)
 
 ## Folder structure
@@ -156,9 +157,9 @@ Modules might have [subcomponents](#subcomponents).
 
 *Exemples: Menu, Dropdown, ...*
 
-#### Modules rules:
+#### Module rules:
 
-- Modules might have subcomponents.
+- Modules might have [subcomponents](#subcomponents).
   > Why? There are some modules that makes sense to split in other components as they increase their size, but not every module's component will be reused in other places instead the module itself, check [subcomponents](#subcomponents) section to learn more.
 
 - Modules shouldn't have margins.
@@ -220,11 +221,76 @@ Features might have [subcomponents](#subcomponents).
 
 Exemples: Authentication, Graphs, Search ...
 
-#### Features rules:
+#### Feature rules:
+
+- Features might have [subcomponents](#subcomponents).
+  > Why? Features usually has multiple components inside, and within then, there are a great chance that some components will be created specifically for that feature, check [subcomponents](#subcomponents) section to learn more.
+
+- Features shouldn't have margins.
+  > Why? Give margins to an feature makes it hard to align and reuse.
+
+- Features should use elements and modules if they can.
+  > Why? Elements and modules should be reused as much as possible to mantain the consistence of the application, features can also change elements and modules styles.
+
+- Features can be stateful.
+  > Why? Features are end to end funcionality components, implementing logics and ui behaviour. Check [Reusing component logics](#reusing-component-logics) section to learn more.
+
+#### Feature sample:
+
+```javascript
+import React, { Component } from 'react';
+
+import { 
+  MyElement,
+  MyModule,
+} from '../..';
+
+class MyFeature extends Component {
+  state = {
+    didSomething: false,
+  }
+
+  doSomeAwesomeThing = () => {
+    // Some code here...
+
+    this.setState({
+      didSomething: true,
+    });
+  }
+
+  render() {
+    const {
+      didSomething,
+    } = this.state;
+
+    return (
+      <section>
+        <MyModule title="Awesome title">
+          <MyElement name="Another Name" />
+        </MyModule>
+
+        {
+          didSomething && 'I did an awesome thing!'
+        }
+
+        <button onClick={this.doSomeAwesomeThing}>
+          I will do something!
+        </button>
+      </section>
+    );
+  }
+}
+
+export default MyFeature;
+```
+
+### Subcomponents
 
 *TO DO*
 
-### Subcomponents
+**[Back to top](#summary)**
+
+### Reusing component logics
 
 *TO DO*
 
