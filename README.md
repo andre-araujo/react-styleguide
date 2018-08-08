@@ -1,4 +1,6 @@
-# React project styleguide
+# WIP - React project styleguide
+
+**This document is in "work in progress" state, and may be modified as needed**
 
 [ReactJS](https://reactjs.org/) applications can scale very well, but can be really chaotic in no time.
 This styleguide tries to solve some common problems of large react applications.
@@ -9,9 +11,12 @@ Create and documentate an opinionated [ReactJS](https://reactjs.org/) style guid
 
 ## Summary
 
-  1. [Folder Structure](#folder-structure)
-  1. [Components](#components)
-  1. [Commits](#commits)
+1. [Folder Structure](#folder-structure)
+2. [Components](#components)
+    1. [Elements](#elements)
+    2. [Modules](#modules)
+    3. [Features](#features)
+3. [Commits](#commits)
 
 ## Folder structure
 
@@ -61,7 +66,7 @@ This styleguide covers only `/src` folder.
       reset.css
       another-static-style.css
     /fonts
-      my-font.jpg
+      my-font.woff
     /images
       my-image.jpg
   index.js
@@ -71,7 +76,7 @@ This styleguide covers only `/src` folder.
 
 ## Components
 
-To help component creation, [react-create-component](https://github.com/andre-araujo/react-create-component) can be used.
+[react-create-component](https://github.com/andre-araujo/react-create-component) can be used to help component creation.
 
 Each component has the following structure:
 ```
@@ -84,10 +89,13 @@ index.js
 
 Where:
 
-- `ModuleName.js`: The component itself.
-- `ModuleName.spec.js`: Component's test cases.
-- `ModuleName.stories.js`: [Storybook](https://storybook.js.org/), or any other styleguide file.
-- `ModuleName.styles.js`: Styles, it can be any CSS or CSS-in-JS solution.
+- `ComponentName.js`
+  - The component itself.
+- `ComponentName.spec.js`
+  - Component's test cases.
+- `ComponentName.stories.js`:
+  - [Storybook](https://storybook.js.org/), or any other component documentation file, replacing ".stories" if needed.
+- `ComponentName.styles.js`: Component styles, it can be any CSS or CSS-in-JS solution.
 - `index.js`: Component's index, any HOC should be applied here.
 
 ### Elements
@@ -98,9 +106,9 @@ Exemples: Button, Input, ...
 
 ### Modules
 
-Modules can use elements to create more complex components, they can have a state and should be easy to reuse, they rearange elements or specific module components, adding margins to them, but they should't have margins or gaps.
+Modules can use elements to create more complex components, they can have a state and should be easy to reuse, they rearange elements or specific module components, adding margins and modifing to elements, but they should't have margins or gaps on their own.
 
-Exemples: Hero, Menu, Dropdown ...
+Exemples: Menu, Dropdown ...
 
 ### Features
 
@@ -120,7 +128,7 @@ Exemples: Authentication, Graphs, Search ...
 
 ## References and special thanks
 
-This styleguide is strongly influenced by the awesome Bradfrost's atomic [design](http://bradfrost.com/blog/post/atomic-web-design/).
+This styleguide is strongly influenced by the awesome Bradfrost's [atomic design](http://bradfrost.com/blog/post/atomic-web-design/).
 
 Other references:
 
