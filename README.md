@@ -16,6 +16,7 @@ Create and documentate an opinionated [ReactJS](https://reactjs.org/) style guid
     1. [Elements](#elements)
     2. [Modules](#modules)
     3. [Features](#features)
+    4. [Subcomponents](#subcomponents)
 3. [Commits](#commits)
 
 ## Folder structure
@@ -46,6 +47,7 @@ This styleguide covers only `/src` folder.
         FeatureName.stories.js
         FeatureName.styles.js
         index.js
+    index.js
   /pages
     /my-page
       ...
@@ -104,7 +106,7 @@ In this system elements are the smallest type of component, they should be highl
 
 *Exemples: Button, Input, ...*
 
-### Element rules:
+#### Element rules:
 
 - Elements doesn't have subcomponents.
   > Why? Elements should be small and has single responsability, if it needs any subcompenent, it should be a module.
@@ -116,12 +118,13 @@ In this system elements are the smallest type of component, they should be highl
   > Why? Give margins to an element makes it hard to align and reuse.
 
 - Elements should be stateless.
-  > Why? Elements should be easy to be controlled by their parents, doing this with a statefull component can be really tricky.
+  > Why? Elements should be easy to be controlled by their parents, doing this with a stateful component can be really tricky.
 
-### Element sample:
+#### Element sample:
 
 ```javascript
 import React from 'react';
+import { string, node } from 'prop-types';
 
 function MyElement({
   name,
@@ -129,7 +132,7 @@ function MyElement({
 }) {
   return (
     <p {...props}>
-      I am the element {name}!
+      I am the {name} element!
     </p>
   );
 }
@@ -149,13 +152,61 @@ export default MyElement;
 
 Modules can use elements to create more complex components, they can have a state and should be easy to reuse, they rearange elements or specific module components, adding margins and modifing to elements, but they should't have margins or gaps on their own.
 
-Modules might have subcomponents.
+Modules might have [subcomponents](#subcomponents).
 
-Exemples: Menu, Dropdown ...
+*Exemples: Menu, Dropdown, ...*
 
-### Modules rules:
+#### Modules rules:
 
-*TO DO*
+- Modules might have subcomponents.
+  > Why? There are some modules that makes sense to split in other components as they increase their size, but not every module's component will be reused in other places instead the module itself, check [subcomponents](#subcomponents) section to learn more.
+
+- Modules shouldn't have margins.
+  > Why? Give margins to an module makes it hard to align and reuse.
+
+- Modules should use elements if they can.
+  > Why? Elements should be reused as much as possible to mantain the consistence of the application, but modules also can change element's styles to make then fit as best as possible.
+
+- Modules can be stateful when necessary.
+  > Why? Modules should be easy to be controlled by their parents, but, as they are more complex components, sometimes it needs to have an state.
+
+- Modules should avoid getDerivedStateFromProps to manipulate their state.
+  > Why? Read [this article](https://reactjs.org/blog/2018/06/07/you-probably-dont-need-derived-state.html).
+
+#### Module sample:
+
+```javascript
+import React from 'react';
+import { string, node } from 'prop-types';
+
+import { MyElement } from '../..';
+
+function MyModule({
+  title,
+  children
+  ...props,
+}) {
+  return (
+    <section>
+      <h1>{title}</h1>
+      <MyElement name="My Element Name" />
+      {children}
+    </section>
+  );
+}
+
+MyModule.defaultProps = {
+  title: 'My title',
+  children: null,
+};
+
+MyModule.propTypes = {
+  title: string,
+  children: node,
+};
+
+export default MyModule;
+```
 
 ### Features
 
@@ -165,11 +216,15 @@ Features can connect with state managers and they meant to be independent of any
 
 **If the component does not implements a feature, it should be a [module](#modules).**
 
-Features might have submodules.
+Features might have [subcomponents](#subcomponents).
 
 Exemples: Authentication, Graphs, Search ...
 
-### Features rules:
+#### Features rules:
+
+*TO DO*
+
+### Subcomponents
 
 *TO DO*
 
