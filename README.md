@@ -16,7 +16,7 @@ Create and documentate an opinionated [ReactJS](https://reactjs.org/) style guid
     1. [Elements](#elements)
     2. [Modules](#modules)
     3. [Features](#features)
-    4. [Subcomponents](#subcomponents)
+    4. [Sub-components](#sub-components)
     4. [Reusing component logics](#reusing-component-logics)
 3. [Commits](#commits)
 
@@ -109,7 +109,7 @@ In this system elements are the smallest type of component, they should be highl
 
 #### Element rules:
 
-- Elements doesn't have subcomponents.
+- Elements doesn't have [sub-components](#sub-components).
   > Why? Elements should be small and has single responsability, if it needs any subcompenent, it should be a module.
 
 - Every element should repass unnused props to their root element.
@@ -153,14 +153,14 @@ export default MyElement;
 
 Modules can use elements to create more complex components, they can have a state and should be easy to reuse, they rearange elements or specific module components, adding margins and modifing to elements, but they should't have margins or gaps on their own.
 
-Modules might have [subcomponents](#subcomponents).
+Modules might have [sub-components](#sub-components).
 
 *Exemples: Menu, Dropdown, ...*
 
 #### Module rules:
 
-- Modules might have [subcomponents](#subcomponents).
-  > Why? There are some modules that makes sense to split in other components as they increase their size, but not every module's component will be reused in other places instead the module itself, check [subcomponents](#subcomponents) section to learn more.
+- Modules might have [sub-components](#sub-components).
+  > Why? There are some modules that makes sense to split in other components as they increase their size, but not every module's component will be reused in other places instead the module itself, check [sub-components](#sub-components) section to learn more.
 
 - Modules shouldn't have margins.
   > Why? Give margins to an module makes it hard to align and reuse.
@@ -217,14 +217,14 @@ Features can connect with state managers and they meant to be independent of any
 
 **If the component does not implements a feature, it should be a [module](#modules).**
 
-Features might have [subcomponents](#subcomponents).
+Features might have [sub-components](#sub-components).
 
 Exemples: Authentication, Graphs, Search ...
 
 #### Feature rules:
 
-- Features might have [subcomponents](#subcomponents).
-  > Why? Features usually has multiple components inside, and within then, there are a great chance that some components will be created specifically for that feature, check [subcomponents](#subcomponents) section to learn more.
+- Features might have [sub-components](#sub-components).
+  > Why? Features usually has multiple components inside, and within then, there are a great chance that some components will be created specifically for that feature, check [sub-components](#sub-components) section to learn more.
 
 - Features shouldn't have margins.
   > Why? Give margins to an feature makes it hard to align and reuse.
@@ -284,9 +284,9 @@ class MyFeature extends Component {
 export default MyFeature;
 ```
 
-### Subcomponents
+### Sub-components
 
-*TO DO*
+See this [article](https://medium.com/maxime-heckel/react-sub-components-513f6679abed). 
 
 **[Back to top](#summary)**
 
@@ -311,5 +311,11 @@ Other references:
 - [`Airbnb JavaScript Style Guide`](https://github.com/airbnb/javascript)
 
 - [`Commitizen`](https://github.com/commitizen)
+
+- [`Maxime Heckel's sub-component post`](https://medium.com/maxime-heckel/react-sub-components-513f6679abed)
+
+- [`ReactJS`](https://reactjs.org/)
+
+- [`React Native API`](https://facebook.github.io/react-native/docs/components-and-apis)
 
 **[Back to top](#summary)**
