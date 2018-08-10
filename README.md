@@ -17,7 +17,9 @@ Create and documentate an opinionated [ReactJS](https://reactjs.org/) style guid
     2. [Modules](#modules)
     3. [Features](#features)
     4. [Sub-components](#sub-components)
-    4. [Reusing component logics](#reusing-component-logics)
+    5. [Third party components](#third-party-components)
+    6. [Reusing component logics](#reusing-component-logics)
+    7. [Styling](#styling)
 3. [Commits](#commits)
 
 ## Folder structure
@@ -240,7 +242,7 @@ Exemples: Authentication, Graphs, Search ...
 ```javascript
 import React, { Component } from 'react';
 
-import { 
+import {
   MyElement,
   MyModule,
 } from '../..';
@@ -286,11 +288,65 @@ export default MyFeature;
 
 ### Sub-components
 
-See this [article](https://medium.com/maxime-heckel/react-sub-components-513f6679abed). 
+*TO DO: Complementary information and folder structure*
+
+For more information, check [this React Native component API](https://facebook.github.io/react-native/docs/picker), or [this article](https://medium.com/maxime-heckel/react-sub-components-513f6679abed).
+
+**[Back to top](#summary)**
+
+### Third party components
+
+Using third party components can be very helpful to prevent "reinventing the wheel", and can reduce a lot of time spent codding.
+
+Although, sometimes we need to change our projects dependencies to better fit our need, and it can be really stressfull to refactour all of existing code that uses that dependency.
+
+Here is a tip:
+All third party components should be reexported by another component that will be used within your application.
+
+  > Why? Using third party components through your entire aplication can be really tricky to refactor, instead of using it directly, I reccomend to reexport it, so, you will have centered file to refactor if that component's API changes, or be replaced by another one.
+
+#### Third party component sample:
+
+```javascript
+// ./src/components/modules/ClickOut/index.js
+import ClickOut from 'react-click-out';
+
+/*
+  Prefer explicit exports.
+  Avoid export * from 'something' when
+  reexporting third party components,
+  which may cause a refactor hazard.
+*/
+export default ClickOut;
+```
+
+```javascript
+// ./src/components/modules/MyModule/MyModule.js
+import React from 'react';
+
+import { ClickOut, MyElement } from '../..';
+
+function MyModule() {
+  return (
+    <ClickOut onClick={/* Do something... */}>
+      <MyElement name="My Element Name" />
+      ...
+    </ClickOut>
+  );
+}
+
+export default MyModule;
+```
 
 **[Back to top](#summary)**
 
 ### Reusing component logics
+
+*TO DO*
+
+**[Back to top](#summary)**
+
+### Styling
 
 *TO DO*
 
