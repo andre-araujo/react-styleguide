@@ -9,6 +9,21 @@ This styleguide tries to solve some common problems of large react applications.
 
 Create and documentate an opinionated [ReactJS](https://reactjs.org/) style guide for component-based projects.
 
+## Contributing
+
+Every help to improve this document is welcome.
+
+I suggest to open an [issue](https://github.com/andre-araujo/react-styleguide/issues/new), then tag with the following labels:
+
+- help wanted
+  > Any misunderstood concept, question or doubt.
+- opinion
+  > Any opinion about any concept. 
+- enhancement
+  > Ideas to improve the document.
+- grammar
+  > Grammar errors or misspelled words. (English is not my native language).
+
 ## Summary
 
 1. [Folder Structure](#folder-structure)
@@ -113,6 +128,9 @@ In this system elements are the smallest type of component, they should be highl
 
 - Elements doesn't have [sub-components](#sub-components).
   > Why? Elements should be small and has single responsability, if it needs any subcompenent, it should be a module.
+
+- **Elements can not be broken**.
+  > Why? If an element can be broken in pieces, it is not the smallest as possible.
 
 - Every element should repass unnused props to their root element.
   > Why? It increase reusability, repassing remaining props to the root component makes gives them the ability to change html attributes, such as data-attributes, width, height, ...
@@ -296,7 +314,7 @@ For more information, check [this React Native component API](https://facebook.g
 
 ### Third party components
 
-Using third party components can be very helpful to prevent "reinventing the wheel", and can reduce a lot of time spent codding.
+Using third party components can be very helpful to prevent "reinventing the wheel", and can reduce a lot of time spent coding.
 
 Although, sometimes we need to change our projects dependencies to better fit our need, and it can be really stressfull to refactour all of existing code that uses that dependency.
 
@@ -308,7 +326,7 @@ All third party components should be reexported by another component that will b
 #### Third party component sample:
 
 ```javascript
-// ./src/components/modules/ClickOut/index.js
+// ./src/components/elements/ClickOut/index.js
 import ClickOut from 'react-click-out';
 
 /*
@@ -375,3 +393,7 @@ Other references:
 - [`React Native API`](https://facebook.github.io/react-native/docs/components-and-apis)
 
 **[Back to top](#summary)**
+
+## License
+
+This document is [MIT licensed](https://github.com/andre-araujo/react-styleguide/blob/master/LICENSE).
