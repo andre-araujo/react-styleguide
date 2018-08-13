@@ -392,6 +392,8 @@ Other references:
 
 - [`React Native API`](https://facebook.github.io/react-native/docs/components-and-apis)
 
+- [`React-bits styleguide`](https://github.com/vasanthk/react-bits)
+
 **[Back to top](#summary)**
 
 ## License
