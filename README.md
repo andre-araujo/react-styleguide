@@ -122,7 +122,7 @@ Where:
 
 In this system elements are the smallest type of component, they should be highly encapsulable, therefore stateless and also shouldn't contain margins, gaps or any style that might interfere with the overall style of the page.
 
-*Exemples: Button, Input, ...*
+*Examples: Button, Input, ...*
 
 #### Element rules:
 
@@ -175,7 +175,7 @@ Modules can use elements to create more complex components, they can have a stat
 
 Modules might have [sub-components](#sub-components).
 
-*Exemples: Menu, Dropdown, ...*
+*Examples: Menu, Dropdown, ...*
 
 #### Module rules:
 
@@ -239,7 +239,7 @@ Features can connect with state managers and they meant to be independent of any
 
 Features might have [sub-components](#sub-components).
 
-Exemples: Authentication, Graphs, Search ...
+Examples: Authentication, Graphs, Search ...
 
 #### Feature rules:
 
