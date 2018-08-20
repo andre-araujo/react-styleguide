@@ -394,6 +394,8 @@ Other references:
 
 - [`React-bits styleguide`](https://github.com/vasanthk/react-bits)
 
+- [`David Gilbertson's ReactJS architecturing post`](https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
+
 **[Back to top](#summary)**
 
 ## License
