@@ -26,15 +26,15 @@ Sugiro abrir uma [issue](https://github.com/andre-araujo/react-styleguide/issues
 
 ## Índice
 
-1. [Estrutura de pastas](#folder-structure)
+1. [Estrutura de pastas](#estrutura-de-pastas)
 2. [Componentes](#components)
-    1. [Elementos](#elements)
-    2. [Módulos](#modules)
+    1. [Elementos](#elementos)
+    2. [Módulos](#modulos)
     3. [Features](#features)
-    4. [Sub-componentes](#sub-components)
-    5. [Componentes de terceiros](#third-party-components)
-    6. [Reusando a lógica de componentes](#reusing-component-logics)
-    7. [Estilização](#styling)
+    4. [Sub-componentes](#sub-componentes)
+    5. [Componentes de terceiros](#componentes-de-terceiros)
+    6. [Reusando a lógica de componentes](#reusando-a-logica-de-componentes)
+    7. [Estilização](#estilizacao)
 3. [Commits](#commits)
 
 ## Estrutura de pastas
@@ -92,7 +92,7 @@ Este guia abrange apenas a pasta `/src`.
   index.js
 ```
 
-**[Voltar para o topo](#summary)**
+**[Voltar para o topo](#indice)**
 
 ## Componentes
 
@@ -128,7 +128,7 @@ Nesse sistema, os elementos são o menor tipo de componente. Eles devem ser alta
 
 #### Regras dos elementos:
 
-- Elementos não têm [sub-componentes](#sub-components).
+- Elementos não têm [sub-componentes](#sub-componentes).
   > Por quê? Elementos devem ser pequenos e ter uma única responsabilidade. Se precisar de um sub-componente, então deveria ser um módulo.
 
 - **Elementos não podem ser quebrados**.
@@ -175,14 +175,14 @@ export default MyElement;
 
 Módulos usam elementos para criar componentes mais complexos. Eles devem ter um *state* e devem ser facilmente reutilizáveis. Eles organizam elementos ou outros módulos, adicionando margens e modificações aos elementos, mas não devem ter margens e espaçamentos próprios.
 
-Módulos podem ter [sub-componentes](#sub-components).
+Módulos podem ter [sub-componentes](#sub-componentes).
 
 *Exemplos: Menu, Dropdown, ...*
 
 #### Regras dos módulos:
 
- - Módulos podem ter [sub-componentes](#sub-components).
-  > Por quê? Tem alguns módulos que fazem sentido serem divididos em outros componentes conforme eles crescem, mas nem todos os componentes do módulo serão reutilizados em outros lugares, veja a sessão de [sub-componentes](#sub-components) para mais detalhes.
+ - Módulos podem ter [sub-componentes](#sub-componentes).
+  > Por quê? Tem alguns módulos que fazem sentido serem divididos em outros componentes conforme eles crescem, mas nem todos os componentes do módulo serão reutilizados em outros lugares, veja a sessão de [sub-componentes](#sub-componentes) para mais detalhes.
 
 - Módulos não devem ter margens.
   > Por quê? Adicinar margem aos módulos os deixa mais difícil de alinhar e reutilizar.
@@ -239,14 +239,14 @@ Features podem estar conectadas com gerenciadores de estado e devem ser independ
 
 ** Se o componente não implementa uma funcionalidade, então deveria ser um [módulo](#modules).**
 
-Features podem ter [sub-componentes](#sub-components).
+Features podem ter [sub-componentes](#sub-componentes).
 
 *Exemplos: Autenticação, gráficos, busca, ...*
 
 #### Regras de features:
 
-- Features podem ter [sub-componentes](#sub-components).
-  > Por quê? Features geralmente contêm mais de um componente, por isso existe uma grance chance de que alguns componentes serão criados especificamente para uma feature, veja a sessão de [sub-componentes](#sub-components) para mais detalhes.
+- Features podem ter [sub-componentes](#sub-componentes).
+  > Por quê? Features geralmente contêm mais de um componente, por isso existe uma grance chance de que alguns componentes serão criados especificamente para uma feature, veja a sessão de [sub-componentes](#sub-componentes) para mais detalhes.
 
 - Features não devem ter margens.
   > Por quê? Adicinar margem às features as deixa mais difícil de alinhar e reutilizar. (TODO)
@@ -255,7 +255,7 @@ Features podem ter [sub-componentes](#sub-components).
   > Por quê? Elemtos e módulos devem ser reutilizados o máximo possível para manter a consistência da aplicação, mas as features também podem mudar o estilo dos módulos e elementos para que se adaptem melhor.
 
 - Features podem ser *stateful*.
-  > Por quê? Features são funcionalidades fim a fim. Implementam lógica e interações com o usuário. Veja a sessão [Reusando a lógica de componentes](#reusing-component-logics) para mais detalhes.
+  > Por quê? Features são funcionalidades fim a fim. Implementam lógica e interações com o usuário. Veja a sessão [Reusando a lógica de componentes](#reusando-a-logica-de-componentes) para mais detalhes.
 
 #### Exemplo de feature:
 
@@ -312,7 +312,7 @@ export default MyFeature;
 
 Para mais informações, veja essa [API de componentes React Native](https://facebook.github.io/react-native/docs/picker), ou [este artigo](https://medium.com/maxime-heckel/react-sub-components-513f6679abed) (ambos em inglês).
 
-**[Voltar para o topo](#summary)**
+**[Voltar para o topo](#indice)**
 
 ### Componentes de terceiros
 
@@ -359,25 +359,25 @@ function MyModule() {
 export default MyModule;
 ```
 
-**[Voltar para o topo](#summary)**
+**[Voltar para o topo](#indice)**
 
 ### Reusando a lógica de componentes
 
 *TO DO*
 
-**[Voltar para o topo](#summary)**
+**[Voltar para o topo](#indice)**
 
 ### Estilização
 
 *TO DO*
 
-**[Voltar para o topo](#summary)**
+**[Voltar para o topo](#indice)**
 
 ## Commits
 
 [`Commitizen's cli`](https://github.com/commitizen/cz-cli) é recomendado para certificar mensagens de commit corretas.
 
-**[Voltar para o topo](#summary)**
+**[Voltar para o topo](#indice)**
 
 ## Referências e agradecimentos
 
@@ -399,7 +399,7 @@ Outras referências:
 
 - [`David Gilbertson's ReactJS architecturing post`](https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
 
-**[Voltar para o topo](#summary)**
+**[Voltar para o topo](#indice)**
 
 ## Licença
 
