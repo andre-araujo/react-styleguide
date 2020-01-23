@@ -249,7 +249,7 @@ Features podem ter [sub-componentes](#sub-componentes).
   > Por quê? Features geralmente contêm mais de um componente, por isso existe uma grance chance de que alguns componentes serão criados especificamente para uma feature, veja a sessão de [sub-componentes](#sub-componentes) para mais detalhes.
 
 - Features não devem ter margens.
-  > Por quê? Adicinar margem às features as deixa mais difícil de alinhar e reutilizar. (TODO)
+  > Por quê? Adicinar margem às features as deixa mais difícil de alinhar e reutilizar.
 
 - Features devem usar elementos e módulos, se possível.
   > Por quê? Elemtos e módulos devem ser reutilizados o máximo possível para manter a consistência da aplicação, mas as features também podem mudar o estilo dos módulos e elementos para que se adaptem melhor.
