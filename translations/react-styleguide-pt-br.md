@@ -27,14 +27,14 @@ Sugiro abrir uma [issue](https://github.com/andre-araujo/react-styleguide/issues
 ## Índice
 
 1. [Estrutura de pastas](#estrutura-de-pastas)
-2. [Componentes](#components)
+2. [Componentes](#componentes)
     1. [Elementos](#elementos)
     2. [Módulos](#modulos)
     3. [Features](#features)
     4. [Sub-componentes](#sub-componentes)
     5. [Componentes de terceiros](#componentes-de-terceiros)
-    6. [Reusando a lógica de componentes](#reusando-a-logica-de-componentes)
-    7. [Estilização](#estilizacao)
+    6. [Reusando a lógica de componentes](#reusando-a-lógica-de-componentes)
+    7. [Estilização](#estilização)
 3. [Commits](#commits)
 
 ## Estrutura de pastas
@@ -92,7 +92,7 @@ Este guia abrange apenas a pasta `/src`.
   index.js
 ```
 
-**[Voltar para o topo](#indice)**
+**[Voltar para o topo](#índice)**
 
 ## Componentes
 
@@ -312,7 +312,7 @@ export default MyFeature;
 
 Para mais informações, veja essa [API de componentes React Native](https://facebook.github.io/react-native/docs/picker), ou [este artigo](https://medium.com/maxime-heckel/react-sub-components-513f6679abed) (ambos em inglês).
 
-**[Voltar para o topo](#indice)**
+**[Voltar para o topo](#índice)**
 
 ### Componentes de terceiros
 
@@ -359,25 +359,25 @@ function MyModule() {
 export default MyModule;
 ```
 
-**[Voltar para o topo](#indice)**
+**[Voltar para o topo](#índice)**
 
 ### Reusando a lógica de componentes
 
 *TO DO*
 
-**[Voltar para o topo](#indice)**
+**[Voltar para o topo](#índice)**
 
 ### Estilização
 
 *TO DO*
 
-**[Voltar para o topo](#indice)**
+**[Voltar para o topo](#índice)**
 
 ## Commits
 
 [`Commitizen's cli`](https://github.com/commitizen/cz-cli) é recomendado para certificar mensagens de commit corretas.
 
-**[Voltar para o topo](#indice)**
+**[Voltar para o topo](#índice)**
 
 ## Referências e agradecimentos
 
@@ -399,7 +399,7 @@ Outras referências:
 
 - [`David Gilbertson's ReactJS architecturing post`](https://hackernoon.com/the-100-correct-way-to-structure-a-react-app-or-why-theres-no-such-thing-3ede534ef1ed)
 
-**[Voltar para o topo](#indice)**
+**[Voltar para o topo](#índice)**
 
 ## Licença
 
